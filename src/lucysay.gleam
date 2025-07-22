@@ -1,3 +1,4 @@
+import argv
 import gleam/io
 
 pub fn format_message(message: String) -> String {
@@ -42,5 +43,15 @@ pub fn get_ascii_art() -> String {
 }
 
 pub fn main() -> Nil {
-  io.println("Hello from lucysay!")
+  case argv.load().arguments {
+    [message] -> {
+      let balloon = create_balloon(message)
+      let art = get_ascii_art()
+      io.println(balloon)
+      io.println(art)
+    }
+    _ -> {
+      io.println("Usage: lucysay <message>")
+    }
+  }
 }
