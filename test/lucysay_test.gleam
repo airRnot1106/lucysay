@@ -15,3 +15,8 @@ pub fn create_balloon_test() {
   let expected = "< Hello >"
   assert result == expected
 }
+
+pub fn get_ascii_art_test() {
+  let result = lucysay.get_ascii_art()
+  assert result != ""
+}
