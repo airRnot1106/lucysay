@@ -26,3 +26,8 @@ pub fn get_ascii_art_test() {
   let result = lucysay.get_ascii_art()
   assert result != ""
 }
+
+pub fn create_connector_test() {
+  let result = lucysay.create_connector()
+  assert result != ""
+}
