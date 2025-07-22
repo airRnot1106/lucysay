@@ -83,7 +83,7 @@ pub fn create_balloon(message: String) -> String {
 }
 
 pub fn create_connector() -> String {
-  "        \\\n         o"
+  "        \\\n         \\"
 }
 
 pub fn get_ascii_art() -> String {
