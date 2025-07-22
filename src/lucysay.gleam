@@ -82,21 +82,17 @@ pub fn create_balloon(message: String) -> String {
   }
 }
 
-pub fn create_connector() -> String {
-  "        \\\n         \\"
-}
-
 pub fn get_ascii_art_with_connector() -> String {
   let art_template =
-    "        $T                                                  
+    "         $T                                                  
           $T                                                 
            $T                                                
             $T                                               
-             $T            ........                          
+             $T         ........                             
               $T       ..:+##-...                            
                $T     ...+    *:...                          
-                $T   ...=       +....                        
-                 $T  ..-#        #-...                       
+                    ...=       +....                        
+                    ..-#        #-...                       
                    ..:*           *:...                     
                   ...=              +....                   
                  ...-#               #+-................... 
@@ -163,10 +159,8 @@ pub fn main() -> Nil {
   case argv.load().arguments {
     [message] -> {
       let balloon = create_balloon(message)
-      let connector = create_connector()
-      let art = get_ascii_art()
+      let art = get_ascii_art_with_connector()
       io.println(balloon)
-      io.println(connector)
       io.println(art)
     }
     _ -> {
