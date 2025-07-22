@@ -102,8 +102,10 @@ pub fn main() -> Nil {
   case argv.load().arguments {
     [message] -> {
       let balloon = create_balloon(message)
+      let connector = create_connector()
       let art = get_ascii_art()
       io.println(balloon)
+      io.println(connector)
       io.println(art)
     }
     _ -> {
