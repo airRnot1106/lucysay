@@ -31,3 +31,9 @@ pub fn create_connector_test() {
   let result = lucysay.create_connector()
   assert result != ""
 }
+
+pub fn create_balloon_japanese_test() {
+  let result = lucysay.create_balloon("こんにちは")
+  let expected = " ____________\n< こんにちは >\n ------------"
+  assert result == expected
+}
