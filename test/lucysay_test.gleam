@@ -1,13 +1,11 @@
 import gleeunit
+import lucysay
 
 pub fn main() -> Nil {
   gleeunit.main()
 }
 
-// gleeunit test functions end in `_test`
-pub fn hello_world_test() {
-  let name = "Joe"
-  let greeting = "Hello, " <> name <> "!"
-
-  assert greeting == "Hello, Joe!"
+pub fn format_message_test() {
+  let result = lucysay.format_message("Hello")
+  assert result == "Hello"
 }
