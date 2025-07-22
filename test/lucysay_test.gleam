@@ -27,9 +27,10 @@ pub fn get_ascii_art_test() {
   assert result != ""
 }
 
-pub fn create_connector_test() {
-  let result = lucysay.create_connector()
-  assert result != ""
+pub fn get_ascii_art_with_connector_test() {
+  let result = lucysay.get_ascii_art_with_connector()
+  assert string.contains(result, "\\")
+  assert !string.contains(result, "$T")
 }
 
 pub fn create_balloon_japanese_test() {
