@@ -122,11 +122,17 @@ pub fn get_ascii_art_with_connector() -> String {
 }
 
 pub fn get_version() -> String {
-  "lucysay 1.0.0"
+  "lucysay 0.0.1"
 }
 
 pub fn main() -> Nil {
   case argv.load().arguments {
+    ["--version"] -> {
+      io.println(get_version())
+    }
+    ["-v"] -> {
+      io.println(get_version())
+    }
     [message] -> {
       let balloon = create_balloon(message)
       let art = get_ascii_art_with_connector()
@@ -135,6 +141,7 @@ pub fn main() -> Nil {
     }
     _ -> {
       io.println("Usage: lucysay <message>")
+      io.println("       lucysay --version")
     }
   }
 }
