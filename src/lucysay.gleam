@@ -121,6 +121,10 @@ pub fn get_ascii_art_with_connector() -> String {
   string.replace(art_template, "?", "\\")
 }
 
+pub fn get_version() -> String {
+  "lucysay 1.0.0"
+}
+
 pub fn main() -> Nil {
   case argv.load().arguments {
     [message] -> {
