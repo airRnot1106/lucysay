@@ -23,11 +23,6 @@ pub fn create_balloon_multi_line_test() {
   assert result == expected
 }
 
-pub fn get_ascii_art_test() {
-  let result = lucysay.get_ascii_art()
-  assert result != ""
-}
-
 pub fn get_ascii_art_with_connector_test() {
   let result = lucysay.get_ascii_art_with_connector()
   assert string.contains(result, "\\")
