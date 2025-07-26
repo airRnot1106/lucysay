@@ -2,6 +2,8 @@
 
 Lucy has something to say!
 
+<img width="583" height="639" alt="Hello World" src="https://github.com/user-attachments/assets/2159e6dd-ab8f-4be6-be2b-2ee36fc82d09" />
+
 ## Usage
 
 ```bash
