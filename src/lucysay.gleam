@@ -122,7 +122,7 @@ pub fn get_ascii_art_with_connector() -> String {
 }
 
 pub fn get_version() -> String {
-  "lucysay 0.0.1"
+  "lucysay 0.1.0"
 }
 
 pub fn main() -> Nil {
