@@ -1,24 +1,61 @@
 # lucysay
 
-[![Package Version](https://img.shields.io/hexpm/v/lucysay)](https://hex.pm/packages/lucysay)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/lucysay/)
+Lucy has something to say!
 
-```sh
-gleam add lucysay@1
+## Usage
+
+```bash
+lucysay "Hello World!"
+
 ```
-```gleam
-import lucysay
-
-pub fn main() -> Nil {
-  // TODO: An example of the project in use
-}
+```
+ _____________
+< Hello World! >
+ ---------------
+       \                                                    
+        \                                                   
+         \             ........                             
+          \           ..:+##-...                            
+           \         ...+    *:...                          
+            \       ...=       +....                        
+             \      ..-#        #-...                       
+                   ..:*           *:...                     
+                  ...=              +....                   
+                 ...-#               #+-................... 
+                ....#                                   #:..
+            .....:=#                                     =..
+       .......:*#                                       =...
+  ......:=+#                                          #:... 
+...:-*#                                              *:..   
+..+                                    #@@#         =...    
+..:*                ###               +@@@@#      #-...     
+ ....-#            =@@@:               #**#      *:...      
+    ...:+#         +@@@=                        #-..        
+      ....-*                #@:..:@#            #:..        
+         ....=#              #+==+#             #=..        
+           ....=                                 *:..       
+             ...+                                 =...      
+             ...-                                 #:..      
+              ..:                                  *...     
+              ..:#                                  -...    
+              ..:*              +=-::-=+*           #:..    
+              ..:*           *:.............:-+##   #:..    
+              ..:+        *-....         ..............     
+              ...+     #-....                     ...       
+               ..:*#*-:....                                 
+                .......                                     
 ```
 
-Further documentation can be found at <https://hexdocs.pm/lucysay>.
+## Build
 
-## Development
+```bash
+# Build executable
+gleam run -m gleescript -- --out=./dist
 
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
+# Run
+./dist/lucysay "Your message here"
 ```
+
+## LICENSE
+
+MIT
