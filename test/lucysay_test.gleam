@@ -34,3 +34,9 @@ pub fn create_balloon_japanese_test() {
   let expected = " ____________\n< こんにちは >\n ------------"
   assert result == expected
 }
+
+pub fn get_version_test() {
+  let result = lucysay.get_version()
+  assert string.contains(result, "lucysay")
+  assert string.contains(result, ".")
+}
