@@ -11,7 +11,6 @@
 *.beam
 *.ez
 /build
-/dist
 erl_crash.dump
 
 ### nix ###

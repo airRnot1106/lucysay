@@ -5,6 +5,7 @@
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-gleam.url = "github:arnarg/nix-gleam";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
@@ -36,6 +37,13 @@
           ...
         }:
         {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            overlays = [
+              inputs.nix-gleam.overlays.default
+            ];
+          };
+          packages.default = pkgs.callPackage ./nix/lucysay { };
           devenv.shells.default = {
             packages = with pkgs; [
               beam28Packages.rebar3
