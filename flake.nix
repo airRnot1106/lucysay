@@ -43,7 +43,23 @@
               inputs.nix-gleam.overlays.default
             ];
           };
-          packages.default = pkgs.callPackage ./nix/lucysay { };
+          packages = {
+            default = pkgs.callPackage ./nix/lucysay {
+              platform = pkgs.stdenv.hostPlatform.system;
+            };
+            x86_64-linux = pkgs.callPackage ./nix/lucysay {
+              platform = "x86_64-linux";
+            };
+            aarch64-linux = pkgs.callPackage ./nix/lucysay {
+              platform = "aarch64-linux";
+            };
+            x86_64-darwin = pkgs.callPackage ./nix/lucysay {
+              platform = "x86_64-darwin";
+            };
+            aarch64-darwin = pkgs.callPackage ./nix/lucysay {
+              platform = "aarch64-darwin";
+            };
+          };
           devenv.shells.default = {
             packages = with pkgs; [
               beam28Packages.rebar3

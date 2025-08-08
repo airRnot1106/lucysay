@@ -2,10 +2,18 @@
   buildGleamApplication,
   stdenv,
   bun,
+  platform,
 }:
 let
   pname = "lucysay";
   version = "0.1.0";
+
+  targets = {
+    x86_64-linux = "bun-linux-x64";
+    aarch64-linux = "bun-linux-arm64";
+    x86_64-darwin = "bun-darwin-x64";
+    aarch64-darwin = "bun-darwin-arm64";
+  };
 
   nix-gleam = buildGleamApplication {
     inherit pname version;
@@ -26,7 +34,9 @@ stdenv.mkDerivation {
 
   buildPhase = ''
     runHook preBuild
-    bun build --compile --minify --outfile=lucysay $src/lib/lucysay/main.mjs
+    export BUN_INSTALL_CACHE_DIR=$TMPDIR/bun-cache
+    mkdir -p $BUN_INSTALL_CACHE_DIR
+    bun build --compile --minify --target ${targets.${platform}} --outfile=lucysay $src/lib/lucysay/main.mjs
     runHook postBuild
   '';
 
@@ -34,11 +44,5 @@ stdenv.mkDerivation {
     runHook preInstall
     install -Dm755 lucysay -t $out/bin
     runHook postInstall
-  '';
-
-  checkPhase = ''
-    runHook preCheck
-    $out/bin/lucysay --version
-    runHook postCheck
   '';
 }
