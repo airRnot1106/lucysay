@@ -48,14 +48,22 @@ lucysay "Hello World!"
                 .......                                     
 ```
 
-## Build
+### Build from Source
+
+Requirements: [Nix](https://nixos.org/download/)
 
 ```bash
-# Build executable
-gleam run -m gleescript -- --out=./dist
+# Build for your current platform
+nix build
 
-# Run
-./dist/lucysay "Your message here"
+# Run the built executable
+./result/bin/lucysay "Your message here"
+
+# Cross-compile for other platforms
+nix build .#x86_64-linux     # Linux x86_64
+nix build .#aarch64-linux    # Linux ARM64
+nix build .#x86_64-darwin    # macOS x86_64
+nix build .#aarch64-darwin   # macOS ARM64
 ```
 
 ## LICENSE
